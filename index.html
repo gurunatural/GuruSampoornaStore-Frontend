@@ -54,6 +54,33 @@
             position: relative; /* Needed for the pseudo-element */
         }
         
+        /* --- Order Now Button --- */
+        #order-now-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            animation: blinkAnimation 4s infinite;
+        }
+
+        #order-now-btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.1); /* Slightly larger scale on hover */
+            animation-play-state: paused; /* Pause animation on hover */
+        }
+        
         /* --- Language Toggle Button --- */
         #lang-toggle {
             position: fixed;
@@ -136,6 +163,11 @@
             to { opacity: 1; transform: scale(1); }
         }
         
+        @keyframes blinkAnimation {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(211, 84, 0, 0.4); }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -957,12 +989,21 @@
                 bottom: 90px;
                 width: auto;
             }
+             #order-now-btn {
+                top: auto;
+                bottom: 20px;
+                left: 20px;
+            }
+            #lang-toggle {
+                top: auto;
+                bottom: 20px;
+            }
         }
 
     </style>
 </head>
 <body>
-
+    <a href="https://gurusampoornacatalogue.netlify.app/" target="_blank" id="order-now-btn" data-lang-en="Order Now" data-lang-hi="अभी ऑर्डर करें">Order Now</a>
     <button id="lang-toggle">हिन्दी</button>
 
     <header class="hidden">
@@ -982,7 +1023,7 @@
         <section class="section video-section hidden">
             <h2 class="section-title" data-lang-en="Our Process in Action" data-lang-hi="हमारी प्रक्रिया क्रियान्वित">Our Process in Action</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/z1PCp3nX-yk?autoplay=1&mute=1&loop=1&playlist=z1PCp3nX-yk&controls=0&showinfo=0&modestbranding=1" title="Guru Sampoorna Manufacturing Process" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/z1PCp3nX-yk?autoplay=1&mute=1&loop=1&playlist=z1PCp3nX-yk&controls=0&showinfo=0&modestbranding=1" title="Guru Sampoorna Manufacturing Process" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -1099,35 +1140,35 @@
             <div class="product-slider-container">
                 <div class="product-slider">
                     <div class="product-card">
-                        <img src="https://i.ibb.co/Cx7DVMV/Peanut-f-2.jpg" alt="Groundnut Oil">
+                        <img loading="lazy" src="https://i.ibb.co/Cx7DVMV/Peanut-f-2.jpg" alt="Groundnut Oil">
                         <div class="product-card-content">
                             <h3 data-lang-en="Groundnut Oil" data-lang-hi="मूंगफली का तेल">Groundnut Oil</h3>
                             <p data-lang-en="Rich, nutty, and perfect for everyday cooking and deep frying." data-lang-hi="अमीर, पौष्टिक, और रोजमर्रा के खाना पकाने और डीप फ्राई के लिए एकदम सही।">Rich, nutty, and perfect for everyday cooking and deep frying.</p>
-                            <a href="https://wa.me/c/916262120120" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
+                            <a href="https://gurusampoornacatalogue.netlify.app/" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://i.ibb.co/MxtMNpj7/6246933471817746915.jpg" alt="A2 Ghee">
+                        <img loading="lazy" src="https://i.ibb.co/MxtMNpj7/6246933471817746915.jpg" alt="A2 Ghee">
                         <div class="product-card-content">
                             <h3 data-lang-en="A2 Gir Cow Ghee" data-lang-hi="ए२ गिर गाय का घी">A2 Gir Cow Ghee</h3>
                             <p data-lang-en="Pure, aromatic, and made from the milk of Gir cows using traditional methods." data-lang-hi="शुद्ध, सुगंधित, और पारंपरिक तरीकों का उपयोग करके गिर गायों के दूध से बना है।">Pure, aromatic, and made from the milk of Gir cows using traditional methods.</p>
-                             <a href="https://wa.me/c/916262120120" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
+                             <a href="https://gurusampoornacatalogue.netlify.app/" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://i.ibb.co/PG37QV3p/Coconut-Oil-F-1.jpg" alt="Coconut Oil">
+                        <img loading="lazy" src="https://i.ibb.co/PG37QV3p/Coconut-Oil-F-1.jpg" alt="Coconut Oil">
                         <div class="product-card-content">
                             <h3 data-lang-en="Coconut Oil" data-lang-hi="नारियल का तेल">Coconut Oil</h3>
                             <p data-lang-en="Versatile and healthy, ideal for cooking, skin, and hair care." data-lang-hi="बहुमुखी और स्वस्थ, खाना पकाने, त्वचा और बालों की देखभाल के लिए आदर्श।">Versatile and healthy, ideal for cooking, skin, and hair care.</p>
-                             <a href="https://wa.me/c/916262120120" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
+                             <a href="https://gurusampoornacatalogue.netlify.app/" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
                         </div>
                     </div>
                      <div class="product-card">
-                        <img src="https://i.ibb.co/dFbhrWy/6233080595970377292.jpg" alt="Mustard Oil">
+                        <img loading="lazy" src="https://i.ibb.co/dFbhrWy/6233080595970377292.jpg" alt="Mustard Oil">
                         <div class="product-card-content">
                             <h3 data-lang-en="Mustard Oil" data-lang-hi="सरसों का तेल">Mustard Oil</h3>
                             <p data-lang-en="Strong, pungent, and a staple in traditional Indian cuisine for its flavor and benefits." data-lang-hi="मजबूत, तीखा, और अपने स्वाद और लाभों के लिए पारंपरिक भारतीय व्यंजनों में एक प्रधान।">Strong, pungent, and a staple in traditional Indian cuisine for its flavor and benefits.</p>
-                             <a href="https://wa.me/c/916262120120" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
+                             <a href="https://gurusampoornacatalogue.netlify.app/" target="_blank" class="order-btn" data-lang-en="Buy Now" data-lang-hi="अभी खरीदें">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -1140,10 +1181,10 @@
                 <h4 class="availability-title" data-lang-en="Also Available On" data-lang-hi="यहां भी उपलब्ध है">Also Available On</h4>
                 <div class="logos-container">
                     <a href="https://www.amazon.in/s?k=GURU+SAMPOORNA+TAAJA&ref=bl_dp_s_web_0" target="_blank" class="platform-logo" title="Find us on Amazon">
-                       <img src="https://i.ibb.co/PsWXsZKr/amazon-logo-on-transparent-background-free-vector.jpg" alt="Amazon Logo">
+                       <img loading="lazy" src="https://i.ibb.co/PsWXsZKr/amazon-logo-on-transparent-background-free-vector.jpg" alt="Amazon Logo">
                     </a>
                     <a href="https://blinkit.com/prn/guru-sampoorna-taaja-wood-pressed-groundnut-oil/prid/686035?srsltid=AfmBOoqucYZ_57fUc-GetTVz4NiFqolCq8EQxCCiGXHkil1CnrHv0pXY" target="_blank" class="platform-logo" title="Find us on Blinkit">
-                       <img src="https://i.ibb.co/Vc7S9XYP/Blinkit-yellow-rounded-svg.png" alt="Blinkit Logo">
+                       <img loading="lazy" src="https://i.ibb.co/Vc7S9XYP/Blinkit-yellow-rounded-svg.png" alt="Blinkit Logo">
                     </a>
                 </div>
                 <div class="delivery-info">
@@ -1172,9 +1213,9 @@
         </div>
         <div class="ai-chat-input-area">
             <input type="text" id="ai-chat-input" 
-                data-lang-en-placeholder="Ask a question..." 
-                data-lang-hi-placeholder="एक सवाल पूछें..." 
-                placeholder="Ask a question...">
+                   data-lang-en-placeholder="Ask a question..." 
+                   data-lang-hi-placeholder="एक सवाल पूछें..." 
+                   placeholder="Ask a question...">
             <button id="ai-chat-send"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
@@ -1187,23 +1228,23 @@
             <div class="slider-container">
                 <div class="slider">
                     <div class="slide">
-                        <img src="https://i.ibb.co/LhvF9b4X/6230911770629884358.jpg" alt="Visitor Shri Pushyamitra Bhargav Ji">
+                        <img loading="lazy" src="https://i.ibb.co/LhvF9b4X/6230911770629884358.jpg" alt="Visitor Shri Pushyamitra Bhargav Ji">
                         <p class="caption" data-lang-en="Shri Pushyamitra Bhargav Ji" data-lang-hi="श्री पुष्यमित्र भार्गव जी">Shri Pushyamitra Bhargav Ji</p>
                     </div>
                     <div class="slide">
-                        <img src="https://i.ibb.co/qYNjZb8v/6230911770629884354.jpg" alt="Visitor Shri Kailash Ji Vijayvargiya">
+                        <img loading="lazy" src="https://i.ibb.co/qYNjZb8v/6230911770629884354.jpg" alt="Visitor Shri Kailash Ji Vijayvargiya">
                         <p class="caption" data-lang-en="Shri Kailash Ji Vijayvargiya" data-lang-hi="श्री कैलाश जी विजयवर्गीय">Shri Kailash Ji Vijayvargiya</p>
                     </div>
                     <div class="slide">
-                        <img src="https://i.ibb.co/Y4NxrY7j/6230911770629884359.jpg" alt="Visitor Shri Satyanarayana Maurya Ji">
+                        <img loading="lazy" src="https://i.ibb.co/Y4NxrY7j/6230911770629884359.jpg" alt="Visitor Shri Satyanarayana Maurya Ji">
                         <p class="caption" data-lang-en="Shri Satyanarayana Maurya Ji" data-lang-hi="श्री सत्यनारायण मौर्य जी">Shri Satyanarayana Maurya Ji</p>
                     </div>
                     <div class="slide">
-                        <img src="https://i.ibb.co/4n1vgcnT/6230911770629884357.jpg" alt="Visitor Shri Mahendra Singh Solanki Ji">
+                        <img loading="lazy" src="https://i.ibb.co/4n1vgcnT/6230911770629884357.jpg" alt="Visitor Shri Mahendra Singh Solanki Ji">
                         <p class="caption" data-lang-en="Shri Mahendra Singh Solanki Ji" data-lang-hi="श्री महेंद्र सिंह सोलंकी जी">Shri Mahendra Singh Solanki Ji</p>
                     </div>
                     <div class="slide">
-                        <img src="https://i.ibb.co/rRN9xnZf/6230911770629884355.jpg" alt="Visitor Swami Aishwaryanand Ji">
+                        <img loading="lazy" src="https://i.ibb.co/rRN9xnZf/6230911770629884355.jpg" alt="Visitor Swami Aishwaryanand Ji">
                         <p class="caption" data-lang-en="Swami Aishwaryanand Ji" data-lang-hi="स्वामी ऐश्वर्यानंद जी">Swami Aishwaryanand Ji</p>
                     </div>
                 </div>
@@ -1221,21 +1262,21 @@
             <div class="team-container">
                 <div class="team-member">
                     <div class="team-photo founder">
-                        <img src="https://i.ibb.co/HpRj80K1/6230911770629884368.jpg" alt="Madhav Patidar - Founder">
+                        <img loading="lazy" src="https://i.ibb.co/HpRj80K1/6230911770629884368.jpg" alt="Madhav Patidar - Founder">
                     </div>
                     <p class="team-name">Madhav Patidar</p>
                     <p class="team-title" data-lang-en="Founder" data-lang-hi="संस्थापक">Founder</p>
                 </div>
                 <div class="team-member">
                     <div class="team-photo">
-                        <img src="https://i.ibb.co/DfZbNN3K/6230911770629884369.jpg" alt="Devvrat Patidar - Co-Founder">
+                        <img loading="lazy" src="https://i.ibb.co/DfZbNN3K/6230911770629884369.jpg" alt="Devvrat Patidar - Co-Founder">
                     </div>
                     <p class="team-name">Devvrat Patidar</p>
                     <p class="team-title" data-lang-en="Co-Founder" data-lang-hi="सह-संस्थापक">Co-Founder</p>
                 </div>
                 <div class="team-member">
                     <div class="team-photo">
-                         <img src="https://i.ibb.co/Pv4dgHSR/6230911770629884367.jpg" alt="Govind Patidar - Co-Founder">
+                         <img loading="lazy" src="https://i.ibb.co/Pv4dgHSR/6230911770629884367.jpg" alt="Govind Patidar - Co-Founder">
                     </div>
                     <p class="team-name">Govind Patidar</p>
                     <p class="team-title" data-lang-en="Co-Founder" data-lang-hi="सह-संस्थापक">Co-Founder</p>
@@ -1253,8 +1294,8 @@
             <a href="https://www.youtube.com/@gurusampoornataajaindore" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://x.com/gurustaaja" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
         </div>
-        <div class="copyright" data-lang-en="© 2025 Guru Sampoorna | Pure. Natural. Trusted." data-lang-hi="© 2025 गुरु सम्पूर्ण | शुद्ध। प्राकृतिक। विश्वसनीय।">
-            © 2025 Guru Sampoorna | Pure. Natural. Trusted.
+        <div class="copyright" data-lang-en="© 2017-2025 Guru Sampoorna | Pure. Natural. Trusted." data-lang-hi="© 2017-2025 गुरु सम्पूर्ण | शुद्ध। प्राकृतिक। विश्वसनीय।">
+            © 2017-2025 Guru Sampoorna | Pure. Natural. Trusted.
         </div>
     </footer>
     
@@ -1458,7 +1499,7 @@
                     address: "Our store is in Indore. Click the button for directions on Google Maps.<br><br><a href='https://maps.app.goo.gl/kmsHJMQamBAQQs3y8' target='_blank' class='chat-btn'>Get Directions</a>",
                     contact: "You can chat with us directly on WhatsApp for any questions.<br><br><a href='https://wa.me/916262120120' target='_blank' class='chat-btn'>Chat on WhatsApp</a>",
                     timing: "Our store is open from Monday to Saturday, 10 AM to 9 PM. We are closed on Sundays.",
-                    order: "To place an order, please check our price list on WhatsApp, and you can order directly from there. Click below to see the catalog.<br><br><a href='https://wa.me/c/916262120120' target='_blank' class='chat-btn'>View Price List & Order</a>",
+                    order: "You can place your order directly from our online catalog. Click the button below to start shopping!<br><br><a href='https://gurusampoornacatalogue.netlify.app/' target='_blank' class='chat-btn'>Order Now</a>",
                     delivery: "Yes, we deliver! For orders within Indore, we offer next-day delivery. If you order today, you'll get it tomorrow. For orders outside Indore, we deliver across India. The delivery charges depend on the product weight and your area's pincode.",
                     peanut_oil: "Our wood-pressed Peanut Oil prices are: ₹300 for 1L, ₹1475 for 5L, and ₹4275 for 15L. You can also bring your own container for a refill!",
                     almond_oil: "Our Almond Oil prices are: ₹280 for 100ml, ₹580 for 200ml, and ₹2600 for 1L.",
@@ -1486,7 +1527,7 @@
                     address: "हमारा स्टोर इंदौर में है। गूगल मैप्स पर दिशा-निर्देशों के लिए बटन पर क्लिक करें।<br><br><a href='https://maps.app.goo.gl/kmsHJMQamBAQQs3y8' target='_blank' class='chat-btn'>दिशा-निर्देश प्राप्त करें</a>",
                     contact: "किसी भी प्रश्न के लिए आप सीधे व्हाट्सएप पर हमसे चैट कर सकते हैं।<br><br><a href='https://wa.me/916262120120' target='_blank' class='chat-btn'>व्हाट्सएप पर चैट करें</a>",
                     timing: "हमारी दुकान सोमवार से शनिवार, सुबह 10 बजे से रात 9 बजे तक खुली रहती है। हम रविवार को बंद रहते हैं।",
-                    order: "ऑर्डर देने के लिए, कृपया व्हाट्सएप पर हमारी मूल्य सूची देखें, और आप सीधे वहां से ऑर्डर कर सकते हैं। कैटलॉग देखने के लिए नीचे क्लिक करें।<br><br><a href='https://wa.me/c/916262120120' target='_blank' class='chat-btn'>मूल्य सूची देखें और ऑर्डर करें</a>",
+                    order: "आप सीधे हमारे ऑनलाइन कैटलॉग से अपना ऑर्डर दे सकते हैं। खरीदारी शुरू करने के लिए नीचे दिए गए बटन पर क्लिक करें!<br><br><a href='https://gurusampoornacatalogue.netlify.app/' target='_blank' class='chat-btn'>अभी ऑर्डर करें</a>",
                     delivery: "हाँ, हम डिलीवरी करते हैं! इंदौर के भीतर के ऑर्डर के लिए, हम अगले दिन डिलीवरी प्रदान करते हैं। यदि आप आज ऑर्डर करते हैं, तो आपको यह कल मिल जाएगा। इंदौर के बाहर के ऑर्डर के लिए, हम पूरे भारत में डिलीवरी करते हैं। डिलीवरी शुल्क उत्पाद के वजन और आपके क्षेत्र के पिनकोड पर निर्भर करता है।",
                     peanut_oil: "हमारी लकड़ी-दबाई हुई मूंगफली तेल की कीमतें हैं: 1L के लिए ₹300, 5L के लिए ₹1475, और 15L के लिए ₹4275। आप रिफिल के लिए अपना कंटेनर भी ला सकते हैं!",
                     almond_oil: "हमारे बादाम तेल की कीमतें हैं: 100ml के लिए ₹280, 200ml के लिए ₹580, और 1L के लिए ₹2600।",
@@ -1538,7 +1579,7 @@
                     aiModal.style.display = 'flex';
                     if (chatMessages.children.length === 0) {
                         setTimeout(() => {
-                           addMessage(translations[currentChatLanguage].greeting, 'ai');
+                            addMessage(translations[currentChatLanguage].greeting, 'ai');
                         }, 500);
                     }
                 }
@@ -1625,5 +1666,4 @@
 
 </body>
 </html>
-
 
