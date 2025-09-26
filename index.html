@@ -1438,37 +1438,6 @@
 
             startTestimonialAutoScroll();
 
-            // --- Product Video Modal Logic ---
-            const videoModal = document.getElementById('product-video-modal');
-            const videoIframe = document.getElementById('product-video-iframe');
-            const seeVideoBtns = document.querySelectorAll('.see-video-btn');
-            const closeVideoModalBtn = videoModal.querySelector('.close-modal');
-
-            seeVideoBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const videoId = btn.getAttribute('data-video-id');
-                    if (videoId) {
-                        videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1&showinfo=0&modestbranding=1`;
-                        videoModal.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-
-            const closeVideoModal = () => {
-                videoModal.style.display = 'none';
-                videoIframe.src = ''; // Stop video playback
-                document.body.style.overflow = 'auto';
-            };
-
-            closeVideoModalBtn.addEventListener('click', closeVideoModal);
-            videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) {
-                    closeVideoModal();
-                }
-            });
-
 
             // --- AI Assistant Logic ---
             const aiBtn = document.getElementById('ai-assistant-btn');
@@ -1656,4 +1625,5 @@
 
 </body>
 </html>
+
 
